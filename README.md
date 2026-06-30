@@ -1,4 +1,4 @@
-### Download (HF datasets)
+# Download (HF datasets)
 
 git clone repo
 
@@ -8,7 +8,7 @@ sbatch download.sh <hf-dataset-path> <split> --output-dir <output_path> --config
 
 *and others
 
-# 1 Full download [2152112 lines]
+#### 1 Full download [2152112 lines]
 
 sbatch download.sh allenai/Dolci-Instruct-SFT train --output-dir ./datasets/ 
 
