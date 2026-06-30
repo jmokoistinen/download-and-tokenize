@@ -36,7 +36,8 @@ sbatch download.sh allenai/c4 train --config en --max-tokens 2e6 --output-dir ./
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e8 --shuffle --output-dir ./datasets/
 ```
 
-#### Token cap + shuffle with fixed seed [keeps the order same always]
+#### Token cap + shuffle with fixed seed 
+keeps the order same always
 
 ```
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e8 --shuffle --seed 42 --output-dir ./datasets
