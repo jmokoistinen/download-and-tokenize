@@ -13,8 +13,7 @@ set -euo pipefail
 
 source ~/environment.sh
 
-
-SCRIPT_DIR=/shared_silo/scratch/mika/experiments/dataset/download_and_tokenize/download #set to your path
+SCRIPT_DIR=/shared_silo/scratch/mika/experiments/dataset/download-and-tokenize/download #set to your path
 mkdir -p "$SCRIPT_DIR/logs" 
 cd "$SCRIPT_DIR"
 
