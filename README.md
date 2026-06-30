@@ -20,7 +20,8 @@ sbatch download.sh allenai/Dolci-Instruct-SFT train --output-dir ./datasets/
 sbatch download.sh wikimedia/wikipedia train --config 20231101.fi --output-dir ./datasets/
 ```
 
-#### 2 Token cap [1480150 tokens] (the main idea was to download max 500B = 5e11 tokens from bigger datasets)
+#### 2 Token cap [1480150 tokens] 
+(the main idea was to download max 500B = 5e11 tokens from bigger datasets)
 
 ```
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e6 --output-dir ./datasets/
@@ -60,6 +61,10 @@ eos_token = <|endoftext|>
 #### Standard 
 
 Define the folder and other parameters in the file 'download_and_tokenize/preprocess/tokenize_all_data.sh', processes all files in the whole folder. Processes also chat data with template <|im_start|> <|im_end|>
+
+```
+sbatch tokenize_all_data.sh
+```
 
 *BUG some chat datasets have tags inside in jsonl format, so it can cause unequal number of tags ( <think> and </think> ...)
 
