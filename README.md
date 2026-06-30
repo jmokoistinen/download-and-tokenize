@@ -1,4 +1,4 @@
-# Download (HF datasets)
+# Download (HF datasets) 
 
 git clone https://github.com/jmokoistinen/download-and-tokenize.git
 
@@ -8,7 +8,7 @@ sbatch download.sh <hf-dataset-path> <split> --output-dir <output_path> --config
 
 *and others
 
-#### 1 Full download [2152112 lines]
+#### 1 Full download [2152112 lines] 
 
 sbatch download.sh allenai/Dolci-Instruct-SFT train --output-dir ./datasets/ 
 
@@ -17,9 +17,9 @@ sbatch download.sh allenai/Dolci-Instruct-SFT train --output-dir ./datasets/
 sbatch download.sh wikimedia/wikipedia train --config 20231101.fi --output-dir ./datasets/
 
 
-#### 2 Token cap [1480150 tokens]
+#### 2 Token cap [1480150 tokens] (the main idea was to download max 500B = 5e
 
-sbatch download.sh allenai/c4 train --config en --max-tokens 2e8 --output-dir ./datasets/
+sbatch download.sh allenai/c4 train --config en --max-tokens 2e6 --output-dir ./datasets/
 
 #### Token cap + shuffle (random seed, printed in log) 
 
