@@ -15,21 +15,22 @@ sbatch download.sh allenai/Dolci-Instruct-SFT train --output-dir ./datasets/
 [create 2152112 lines] 
 ```
 
-#### Full download with config <subset> [561598 lines]
+#### Full download with config(subset)
 
 ```
 sbatch download.sh wikimedia/wikipedia train --config 20231101.fi --output-dir ./datasets/
 [561598 lines]
 ```
 
-#### 2 Token cap [1531122 lines] 
+#### 2 Token cap 
 
 ```
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e6 --output-dir ./datasets/
 [1531122 lines] 
 ```
 
-#### 3 Token cap + shuffle (random seed, always different data) 
+#### Token cap + shuffle 
+(random seed, always different data) 
 
 ```
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e8 --shuffle --output-dir ./datasets/
