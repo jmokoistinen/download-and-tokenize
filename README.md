@@ -1,8 +1,8 @@
 # Download (HF datasets)
 
-git clone repo
+git clone 
 
-cd repo/download.sh
+cd download-and-tokenize/download 
 
 sbatch download.sh <hf-dataset-path> <split> --output-dir <output_path> --config <subset> (optional) --shuffle (optional) --seed <seed_num> (optional)
 
