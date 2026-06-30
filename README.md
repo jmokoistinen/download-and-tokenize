@@ -12,7 +12,7 @@ sbatch download.sh <hf-dataset-path> <split> --output-dir <output_path> --config
 
 ```
 sbatch download.sh allenai/Dolci-Instruct-SFT train --output-dir ./datasets/
-``` 
+```
 
 #### Full download with config/subset [561598 lines]
 
