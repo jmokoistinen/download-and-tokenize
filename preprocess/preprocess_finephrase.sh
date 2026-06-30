@@ -50,7 +50,7 @@ apptainer exec --rocm \
     -B "${BIND_PATH}:${BIND_PATH}:rw" \
     --env PYTHONPATH="${BRIDGE_ROOT}/python-packages:${BRIDGE_ROOT}/3rdparty/Megatron-LM:${BRIDGE_ROOT}/src" \
     "$CONTAINER" \
-    python3 $MEGATRON_DIR/tools/preprocess_data_finephrase.py \
+    python3 preprocess_data_finephrase.py \
         --input $INPUTFILE \
         --output-prefix $OUTPUT_PREFIX \
         --tokenizer-type HuggingFaceTokenizer \
