@@ -14,13 +14,13 @@ sbatch download.sh <hf-dataset-path> <split> --output-dir <output_path> --config
 sbatch download.sh allenai/Dolci-Instruct-SFT train --output-dir ./datasets/
 ```
 
-#### Full download with config/subset [561598 lines]
+#### Full download with config <subset> [561598 lines]
 
 ```
 sbatch download.sh wikimedia/wikipedia train --config 20231101.fi --output-dir ./datasets/
 ```
 
-#### 2 Token cap [1480150 tokens] (the main idea was to download max 500B = 5e
+#### 2 Token cap [1480150 tokens] (the main idea was to download max 500B = 5e11 tokens from bigger datasets)
 
 ```
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e6 --output-dir ./datasets/
