@@ -39,13 +39,7 @@ sbatch download.sh allenai/c4 train --config en --max-tokens 1e8 --shuffle --out
 sbatch download.sh allenai/c4 train --config en --max-tokens 5e9 --shuffle --seed 42 --output-dir ./datasets
 ```
 
-#### 3 Nemotron math with config 
-
-```
-sbatch download.sh nvidia/Nemotron-CC-Math-v1 train --config 4plus_MIND --output-dir ./datasets/
-```
-
-#### 4 10% slice 
+#### 3 10% slice 
 
 ```
 sbatch download.sh allenai/c4 train --config en --sample-rate 0.1 --output-dir /datasets/c4
