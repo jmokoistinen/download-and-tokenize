@@ -1,6 +1,6 @@
 # Download (HF datasets)
 
-git clone 
+git clone https://github.com/jmokoistinen/download-and-tokenize.git
 
 cd download-and-tokenize/download 
 
