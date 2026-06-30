@@ -21,7 +21,6 @@ sbatch download.sh wikimedia/wikipedia train --config 20231101.fi --output-dir .
 ```
 
 #### 2 Token cap [1480150 tokens] 
-(the main idea was to download max 500B = 5e11 tokens from bigger datasets)
 
 ```
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e6 --output-dir ./datasets/
