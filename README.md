@@ -29,20 +29,15 @@ sbatch download.sh allenai/c4 train --config en --max-tokens 2e6 --output-dir ./
 #### Token cap + shuffle (random seed, printed in log) 
 
 ```
-sbatch download.sh allenai/c4 train --config en --max-tokens 1e8 --shuffle --output-dir ./datasets/
+sbatch download.sh allenai/c4 train --config en --max-tokens 5e2 --shuffle --output-dir ./datasets/
 ```
 
 #### Token cap + shuffle with fixed seed
 
 ```
-sbatch download.sh allenai/c4 train --config en --max-tokens 5e9 --shuffle --seed 42 --output-dir ./datasets
+sbatch download.sh allenai/c4 train --config en --max-tokens 2e8 --shuffle --seed 42 --output-dir ./datasets
 ```
 
-#### 3 10% slice 
-
-```
-sbatch download.sh allenai/c4 train --config en --sample-rate 0.1 --output-dir /datasets/c4
-```
 
 
 
