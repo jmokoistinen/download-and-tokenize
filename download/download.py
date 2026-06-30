@@ -15,12 +15,7 @@ Three download modes (auto-selected based on flags):
         python3 download_basic.py allenai/c4 train --config bg --max-tokens 5e9 --shuffle --seed 42 --output-dir /datasets/c4
         # shuffles then caps → same filename but randomised rows
 
-3. Percentage slice (--sample-rate) — parallel, fast:
-        python3 download_basic.py allenai/c4 train --config bg --sample-rate 0.1 --output-dir /datasets/c4
-        # takes first 10% → c4-en-10pct.jsonl
-
-
-4. Dataset subsets (--config): [already used in the 2 and 3.]
+3. Dataset subsets (--config): [already used in the 2 and 3.]
         python3 download_basic.py wikimedia/wikipedia train --config 20231101.fi --output-dir /datasets/wiki
         # → wikipedia-20231101.fi.jsonl
 
@@ -43,7 +38,6 @@ import random as _random
 ap = ArgumentParser()
 ap.add_argument('name')
 ap.add_argument('split')
-ap.add_argument('--sample-rate', type=float, default=None, help='e.g. 0.1 = 10%')
 ap.add_argument('--max-tokens', type=float, default=None, help='e.g. 500000000 = 0.5B')
 ap.add_argument('--config', default=None, help='dataset config/subset, e.g. 20231101.fi')
 ap.add_argument('--output-dir', default='.')
@@ -58,8 +52,6 @@ out_dir.mkdir(parents=True, exist_ok=True)
 if args.max_tokens:
     tok = args.max_tokens
     suffix = f'-max-{int(tok/1e9)}Btok' if tok >= 1e9 else f'-max-{int(tok/1e6)}Mtok'
-elif args.sample_rate:
-    suffix = f'-{int(args.sample_rate * 100)}pct'
 else:
     suffix = ''
 if args.shuffle:
@@ -68,19 +60,13 @@ if args.shuffle:
 out_name = str(out_dir / f'{path.basename(args.name)}-{args.config or args.split}{suffix}.jsonl')
 print(f'Output: {out_name}', flush=True)
 
-# Simple percentage slice — no streaming needed, fast
-if args.sample_rate and not args.max_tokens:
-    pct = float(args.sample_rate * 100)
-    ds = load_dataset(args.name, args.config, split=f'{args.split}[:{pct}%]', num_proc=16)
-    ds.to_json(out_name)
 
 # Full download — no filtering, fast parallel path
-elif not args.max_tokens and not args.shuffle:
+if not args.max_tokens and not args.shuffle:
     ds = load_dataset(args.name, args.config, split=args.split, num_proc=32)
     print(f'Rows: {len(ds):,}', flush=True)
     ds.to_json(out_name)
     print(f'Done. {len(ds):,} rows → {out_name}')
-
 # Token cap or shuffle — requires streaming
 else:
     ds = load_dataset(args.name, args.config, split=args.split, streaming=True)
