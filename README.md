@@ -81,8 +81,7 @@ sbatch preprocess_finephrase.sh /shared_silo/scratch/datasets/english/finephrase
 sbatch preprocess_finephrase.sh /shared_silo/scratch/datasets/english/finephrase/FinePhrase-tutorial-max-125Btok.jsonl /shared_silo/scratch/datasets/tokenized/qwen3.5/megatron/finephrase/FinePhrase-tutorial-train
 ```
 
-*BUG there is empty lines here from empty rollout lines, take out!
-
-*QUESTION is there spercific processing needed here with the rollouts? 
+*BUG there is empty lines rollout lines! 
+now fixed to skip empty, but now only checks the first rollout if there are multiple
 
 
