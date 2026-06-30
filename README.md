@@ -29,7 +29,7 @@ sbatch download.sh allenai/c4 train --config en --max-tokens 2e6 --output-dir ./
 [1531122 lines] 
 ```
 
-#### Token cap + shuffle (random seed, always different data) 
+#### 3 Token cap + shuffle (random seed, always different data) 
 
 ```
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e8 --shuffle --output-dir ./datasets/
