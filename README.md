@@ -8,31 +8,34 @@ sbatch download.sh <hf-dataset-path> <split> --output-dir <output_path> --config
 
 *and others
 
-#### 1 Full download [2152112 lines] 
+#### 1 Full download
 
 ```
 sbatch download.sh allenai/Dolci-Instruct-SFT train --output-dir ./datasets/
+[create 2152112 lines] 
 ```
 
 #### Full download with config <subset> [561598 lines]
 
 ```
 sbatch download.sh wikimedia/wikipedia train --config 20231101.fi --output-dir ./datasets/
+[561598 lines]
 ```
 
 #### 2 Token cap [1531122 lines] 
 
 ```
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e6 --output-dir ./datasets/
+[1531122 lines] 
 ```
 
-#### Token cap + shuffle (random seed, printed in log) 
+#### Token cap + shuffle (random seed, always different data) 
 
 ```
-sbatch download.sh allenai/c4 train --config en --max-tokens 5e2 --shuffle --output-dir ./datasets/
+sbatch download.sh allenai/c4 train --config en --max-tokens 2e8 --shuffle --output-dir ./datasets/
 ```
 
-#### Token cap + shuffle with fixed seed
+#### Token cap + shuffle with fixed seed [keeps the order same always]
 
 ```
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e8 --shuffle --seed 42 --output-dir ./datasets
