@@ -20,7 +20,7 @@ sbatch download.sh allenai/Dolci-Instruct-SFT train --output-dir ./datasets/
 sbatch download.sh wikimedia/wikipedia train --config 20231101.fi --output-dir ./datasets/
 ```
 
-#### 2 Token cap [1531122 tokens] 
+#### 2 Token cap [1531122 lines] 
 
 ```
 sbatch download.sh allenai/c4 train --config en --max-tokens 2e6 --output-dir ./datasets/
