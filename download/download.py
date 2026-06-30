@@ -70,7 +70,7 @@ print(f'Output: {out_name}', flush=True)
 
 # Simple percentage slice — no streaming needed, fast
 if args.sample_rate and not args.max_tokens:
-    pct = int(args.sample_rate * 100)
+    pct = float(args.sample_rate * 100)
     ds = load_dataset(args.name, args.config, split=f'{args.split}[:{pct}%]', num_proc=16)
     ds.to_json(out_name)
 
