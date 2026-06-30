@@ -72,13 +72,13 @@ sbatch tokenize_all_data.sh
 #### Finephrase dataset has the rollouts and those are taken instead of text, 
 
 ```
-sbatch preprocess.sh /shared_silo/scratch/datasets/english/finephrase/FinePhrase-faq-max-125Btok.jsonl /shared_silo/scratch/datasets/tokenized/qwen3.5/megatron/finephrase/FinePhrase-faq-train
+sbatch preprocess_finephrase.sh /shared_silo/scratch/datasets/english/finephrase/FinePhrase-faq-max-125Btok.jsonl /shared_silo/scratch/datasets/tokenized/qwen3.5/megatron/finephrase/FinePhrase-faq-train
 
-sbatch preprocess.sh /shared_silo/scratch/datasets/english/finephrase/FinePhrase-math-max-125Btok.jsonl /shared_silo/scratch/datasets/tokenized/qwen3.5/megatron/finephrase/FinePhrase-math-train
+sbatch preprocess_finephrase.sh /shared_silo/scratch/datasets/english/finephrase/FinePhrase-math-max-125Btok.jsonl /shared_silo/scratch/datasets/tokenized/qwen3.5/megatron/finephrase/FinePhrase-math-train
 
-sbatch preprocess.sh /shared_silo/scratch/datasets/english/finephrase/FinePhrase-table-max-125Btok.jsonl /shared_silo/scratch/datasets/tokenized/qwen3.5/megatron/finephrase/FinePhrase-table-train
+sbatch preprocess_finephrase.sh /shared_silo/scratch/datasets/english/finephrase/FinePhrase-table-max-125Btok.jsonl /shared_silo/scratch/datasets/tokenized/qwen3.5/megatron/finephrase/FinePhrase-table-train
 
-sbatch preprocess.sh /shared_silo/scratch/datasets/english/finephrase/FinePhrase-tutorial-max-125Btok.jsonl /shared_silo/scratch/datasets/tokenized/qwen3.5/megatron/finephrase/FinePhrase-tutorial-train
+sbatch preprocess_finephrase.sh /shared_silo/scratch/datasets/english/finephrase/FinePhrase-tutorial-max-125Btok.jsonl /shared_silo/scratch/datasets/tokenized/qwen3.5/megatron/finephrase/FinePhrase-tutorial-train
 ```
 
 *BUG there is empty lines here from empty rollout lines, take out!
