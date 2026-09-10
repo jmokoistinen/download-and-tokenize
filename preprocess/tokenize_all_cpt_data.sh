@@ -23,7 +23,7 @@ DATASET_DIR=$SCRATCH_DIR/raw #you path to jsonl files, if muttiple will tokenize
 
 TOKENIZER=$SCRATCH_DIR/tokenized/tokenizer/Qwen3.5-35B-A3B-Base 
 
-TOKENIZED_DIR=$SCRATCH_DIR/tokenized/tokenizer #set your path megatron tokenized
+TOKENIZED_DIR=$SCRATCH_DIR/tokenized/tokenizer/QWen3.5-35B-A3B-Base #set your path megatron tokenized, where you want the tokenized files stored
 CLEANED_DIR=/shared_silo/scratch/mika/experiments/dataset/preprocess/data_clean #set you path for claened files
 
 mkdir -p "$TOKENIZED_DIR"
